@@ -45,12 +45,12 @@ def do_deploy(archive_path):
 
 
 @task
-def deploy():
+def deploy(c):
     """deploy web static."""
     file = do_pack()
     if file is None:
         return False
-    return do_deploy(file)
+    return do_deploy(c, file)
 
 
 if __name__ == "__main__":
